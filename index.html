@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MIDI Redux</title>
+    <meta name="description" content="Presentación Murcia Frontend">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="all" href="static/css/base.css">
+    <link rel="stylesheet" type="text/css" media="all" href="static/css/colors.css">
+    <link rel="stylesheet" type="text/css" media="all" href="static/css/svg-icons.css">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@eletorro"> <!-- EDIT -->
+    <meta name="twitter:creator" content="@eletorro"> <!-- EDIT -->
+    <meta name="twitter:title" content="Elena Torro"> <!-- EDIT -->
+
+    <link rel="shortcut icon" sizes="16x16" href="static/images/favicons/favicon.png">
+    <link rel="shortcut icon" sizes="32x32" href="static/images/favicons/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="static/images/favicons/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="static/images/favicons/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="static/images/favicons/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="static/images/favicons/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="static/images/favicons/favicon-192.png">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#333333">
+  </head>
+
+  <body>
+    <main role="main">
+      <article id="webslides" class="vertical">
+
+        <!--  SLIDE  -->
+
+        <section class="bg-black">
+          <span class="background" style="background-image:url('./images/midi.jpeg'); opacity:0.3;"></span>
+          <div class="wrap aligncenter">
+            <h1 class="text-data"><strong>MIDI 💜 Redux</strong></h1>
+            <p class="text-intro">Cómo reproducir un archivo MIDI usando Redux</p>
+          </div>
+        </section>
+
+        <!--  SLIDE  -->
+
+        <section>
+          <div class="wrap size-50 aligncenter">
+            <div class="bg-white shadow">
+              <ul class="flexblock reasons">
+                <li>
+                  <h2>MIDI 📝</h2>
+                  <p>Un poquito de teoría </p>
+                </li>
+                <li>
+                  <h2>Mensajes MIDI 💬</h2>
+                  <p>Bits, bytes, notas musicales... </p>
+                </li>
+                <li>
+                  <h2>Redux ⚛️</h2>
+                  <p>Reproducir un archivo MIDI</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- SLIDE 3 -->
+
+        <section class="fullscreen">
+          <div class="card-50">
+            <figure>
+              <img src="./images/coding_gif.gif" alt="Elena Torro">
+            </figure>
+            <!-- end figure-->
+            <div class="flex-content">
+              <h2>
+                Elena Torró
+              </h2>
+              <p>Developer</p>
+              <ul class="description">
+                <li>
+                  <strong class="text-label">Front End</strong> myABCKit
+                </li>
+                <li>
+                  <strong class="text-label">Twitter</strong> @eletorro
+                </li>
+                <li>
+                  <strong class="text-label">GitHub</strong> @elenatorro
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- SLIDE  -->
+
+        <!-- SLIDE -->
+
+        <section>
+          <div class="wrap aligncenter fadeIn">
+            <h1 class="text-data">🤔 🎼 + ⚛️</h1>
+          </div>
+        </section>
+
+        <section>
+          <div class="wrap aligncenter fadeIn">
+            <h1 class="text-data">¿Qué es MIDI? ✋</h1>
+          </div>
+        </section>
+
+        <section>
+          <div class="wrap aligncenter">
+            <h2>❌ Qué NO es MIDI ❌</h2>
+            <ul class="flexblock features">
+              <li>
+                <div>
+                  <h2>
+                    <span>🔇</span> No es un formato de audio
+                  </h2>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h2>
+                    <span>🎼</span> No es un lenguaje musical
+                  </h2>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h2>
+                    <span>🎮</span> No es la "música de los videojuegos antiguos"
+                  </h2>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- SLIDE 5 -->
+
+        <section>
+          <div class="wrap aligncenter">
+            <h2>✅ Qué SÍ es MIDI ✅</h2>
+            <ul class="flexblock features">
+              <li>
+                <div>
+                  <h2>
+                    <span>📞</span> Un protocolo digital de comunicación
+                  </h2>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h2>
+                    <span>📝</span> Un estándar tecnológico
+                  </h2>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h2>
+                    <span>👤</span> Una interfaz digital
+                  </h2>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- SLIDE -->
+
+        <section>
+          <span class="background" style="background-image:url('./images/mezclas_2.jpeg'); opacity:0.1;"></span>
+          <div class="wrap">
+            <div class="content-center">
+              <h2>El estándar MIDI hace referencia a</h2>
+              <ul class="flexblock specs">
+                <li>
+                  <h3>
+                    Los cables que unen los dispositivos
+                  </h3>
+                </li>
+                <li>
+                  <h3>
+                    Los conectores de estos cables
+                  </h3>
+                </li>
+                <li>
+                  <h3>
+                    La manera de transmitir los mensajes por los cables
+                  </h3>
+                </li>
+                <li>
+                  <h3>
+                    El tipo de mensaje que pueden intercambiar
+                  </h3>
+                </li>
+                <li>
+                  <h3>
+                    La codificación de los mensajes
+                  </h3>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- SLIDE -->
+
+        <section>
+          <div class="wrap aligncenter">
+            <div class="grid vertical-align aligncenter">
+              <div class="column">
+                <h3><strong>Separar la parte física</strong></h3>
+                <p>Cualquier dispositivo puede ser controlado si "habla" MIDI.</p>
+              </div>
+              <div class="column">
+                <h3><strong>Controladores</strong></h3>
+                <p>Cualquier cosa puede ser un controlador</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SLIDE -->
+
+        <section>
+          <div class="wrap aligncenter fadeIn">
+            <h1 class="text-data">👌😀</h1>
+          </div>
+        </section>
+
+        <!--  SLIDE  -->
+
+        <section class="bg-black">
+          <span class="background" style="background-image:url('./images/binary.gif'); opacity:0.3;"></span>
+          <div class="wrap aligncenter">
+            <h1 class="text-data"><strong>🙃</strong></h1>
+          </div>
+        </section>
+
+        <!-- SLIDE -->
+
+        <section>
+          <div class="wrap size-50 aligncenter">
+            <div class="bg-white shadow">
+              <h1>Mensajes MIDI</h1>
+              <ul class="flexblock aligncenter">
+                <li>
+                  <h2>Órdenes de control</h2>
+                </li>
+                <li>
+                  <h2>Binario</h2>
+                </li>
+                <li>
+                  <h2>10 en 10</h2>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!--  SLIDE -->
+
+        <section>
+          <div class="wrap aligncenter fadeIn">
+            <h1 class="text-data">0 E n n n n n n n 1</h1>
+          </div>
+        </section>
+
+        <!--  SLIDE -->
+
+        <section>
+          <div class="wrap">
+            <div class="grid">
+              <div class="column">
+                <h1>
+                  Mensajes de canal
+                </h1>
+                <ul>
+                  <li><h3>Voz</h3></li>
+                  <li><h3>Modo</h3></li>
+                </ul>
+              </div>
+              <div class="column">
+                <h1>
+                  Mensajes de sistema
+                </h1>
+                <ul>
+                  <li><h3>Comunes</h3></li>
+                  <li><h3>Tiempo Real</h3></li>
+                  <li><h3>Exclusivos</h3></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--  SLIDE -->
+
+        <section>
+          <div class="wrap aligncenter">
+            <h1>1 e e e c c c c</h1>
+            <p>Byte de Estado</p>
+            <h1>0 n n n n n n</h1>
+            <p>Byte de Datos</p>
+            <h1>0 n n n n n n</h1>
+            <p>Byte de Datos (opcional)</p>
+          </div>
+        </section>
+
+        <!--  SLIDE -->
+
+        <section>
+          <div class="wrap">
+            <h2>Mensajes de canal</h2>
+            <ul class="flexblock border blink">
+              <li><a href=""><strong>Mensaje</strong></a></li>
+              <li><a href=""><strong>Byte de estado</strong></a></li>
+              <li><a href=""><strong>Byte de datos 1</strong></a></li>
+              <li><a href=""><strong>Byte de datos 2</strong></a></li>
+
+              <li><a href=""><strong>Note OFF</strong></a></li>
+              <li><a href=""><strong>1000 nnnn (8N)</strong>1000 0001</a></li>
+              <li><a href=""><strong>altura</strong>0011 1100</a></li>
+              <li><a href=""><strong>velocidad</strong>0000 1101</a></li>
+
+              <li><a href=""><strong>Note ON</strong></a></li>
+              <li><a href=""><strong>1001 nnnn (9N)</strong>1000 0001</a></li>
+              <li><a href=""><strong>altura</strong>0011 1100</a></li>
+              <li><a href=""><strong>velocidad</strong>0101 1111</a></li>
+            </ul>
+          </div>
+        </section>
+
+        <!--  SLIDE -->
+
+        <section>
+          <div class="wrap">
+            <h2>Mensajes de canal</h2>
+            <ul class="flexblock border blink">
+              <li><a href=""><strong>Mensaje</strong></a></li>
+              <li><a href=""><strong>Byte de estado</strong></a></li>
+              <li><a href=""><strong>Byte de datos 1</strong></a></li>
+              <li><a href=""><strong>Byte de datos 2</strong></a></li>
+
+              <li><a href=""><strong>Control Change</strong></a></li>
+              <li><a href=""><strong>1011 nnnn (BN)</strong>1011 0001</a></li>
+              <li><a href=""><strong>tipo de control</strong>0000 0111</a></li>
+              <li><a href=""><strong>intensidad</strong>0111 1111</a></li>
+
+              <li><a href=""><strong>Program Change</strong></a></li>
+              <li><a href=""><strong>1100 nnnn (CN)</strong>1100 0000</a></li>
+              <li><a href=""><strong>programa</strong>0111 0001</a></li>
+              <li><a href=""><strong></strong></a></li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- SLIDE -->
+
+        <section>
+          <div class="wrap">
+            <h3>Reproducción de una nota 🎵</h3>
+            <ul class="flexblock steps aligncenter">
+              <li>
+                <h2>Nota</h2>
+                <br/>
+                <span>DO<sub>4</sub></span>
+              </li>
+              <li>
+                <div class="process step-2"></div>
+                <h2>Número de nota</h2>
+                <br/>
+                <span>60</span>
+              </li>
+              <li>
+                <div class="process step-3"></div>
+                <h2>Cálculo</h2>
+
+                <h4>
+                  f = 440·2<sup>(h - 69) / 12</sup>
+                </h4>
+                <br/>
+                <sub>(h = 60)</sub>
+              </li>
+              <li>
+                <div class="process step-4"></div>
+                <h2>Frecuencia 🔊</h2>
+                <span>
+                  261,63<small>Hz</small>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!--  SLIDE -->
+
+        <section>
+          <div class="wrap aligncenter">
+            <h2>WebAudio API 🤓</h2>
+            <div class="grid vertical-align">
+              <div class="column">
+<pre>
+function getFrequency(note) {
+  const
+    LA_HZ  = 440,
+    LA_DEC = 69,
+    OCTAVE = 12
+  ;
+
+  return LA_HZ * Math.pow(2, (note - LA_DEC) / OCTAVE);
+}
+
+function generateOscillator(note) {
+  let
+    audioContext = new AudioContext,
+    oscillator   = audioContext.createOscillator(),
+    frequency    = getFrequency(note)
+  ;
+
+  oscillator.connect(audioContext.destination);
+  oscillator.frequency.value = frequency;
+  return oscillator;
+}
+</pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!--  SLIDE  -->
+
+        <section>
+          <span class="background" style="background-image:url('./images/violin.gif');"></span>
+          <div class="wrap aligncenter">
+            <h1 class="text-data"><strong></strong></h1>
+          </div>
+        </section>
+
+
+        <!-- SLIDE -->
+
+        <section>
+          <div class="wrap size-50 aligncenter">
+            <div class="bg-white shadow">
+              <h1>Ficheros MIDI</h1>
+              <ul class="flexblock aligncenter">
+                <li>
+                  <h2>Cabecera</h2>
+                </li>
+                <li>
+                  <h2>Pistas</h2>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- SLIDE -->
+
+        <section>
+          <div class="wrap">
+            <h2>Estructura Fichero MIDI</h2>
+            <ul class="flexblock border blink">
+              <li><a href=""><strong>Bloque</strong></a></li>
+              <li><a href=""><strong>Información</strong></a></li>
+              <li><a href=""><strong>Longitud</strong></a></li>
+              <li><a href=""><strong>Contenido</strong></a></li>
+
+              <li><a href=""><strong>Cabecera</strong></a></li>
+              <li><a href="">
+                <ul>
+                  <li>Firma</li>
+                  <li>Longitud</li>
+                  <li>Formato</li>
+                  <li>Nº de Pistas</li>
+                  <li>Resolución Temporal</li>
+                </ul>
+              </a></li>
+              <li><a href="">
+                  <ul>
+                    <li>4</li>
+                    <li>4</li>
+                    <li>2</li>
+                    <li>2</li>
+                    <li>2</li>
+                  </ul>
+                </a>
+              </li>
+              <li><a href="">
+                  <ul>
+                    <li>"MThd"</li>
+                    <li>6</li>
+                    <li>0 | 1 | 2</li>
+                    <li>Si el tipo es 0, vale 1</li>
+                    <li>Pulsos por cada nota negra</li>
+                  </ul>
+                </a>
+              </li>
+
+              <li><a href=""><strong>Pista</strong></a></li>
+              <li><a href="">
+                <ul>
+                  <li>Firma</li>
+                  <li>Longitud</li>
+                  <li>Datos</li>
+                </ul>
+              </a></li>
+              <li><a href="">
+                  <ul>
+                    <li>4</li>
+                    <li>4</li>
+                    <li>N</li>
+                  </ul>
+                </a>
+              </li>
+              <li><a href="">
+                  <ul>
+                    <li>"MTrk"</li>
+                    <li>N</li>
+                    <li>Secuencia de mensajes MIDI (de canal, de sistema, deltaTimes y meta-eventos)</li>
+                  </ul>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!--  SLIDE -->
+
+        <section>
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3>Cabecera</h3>
+              </div>
+
+              <div class="column">
+<pre>
+"header": {
+  "formatType": 1,
+  "trackCount": 10,
+  "ticksPerBeat": 96
+}
+</pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--  SLIDE -->
+
+        <section>
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3>Note ON</h3>
+              </div>
+
+              <div class="column">
+<pre>
+{
+  "deltaTime": 1660,
+  "channel": 0,
+  "type": "channel",
+  "noteNumber": 35,
+  "velocity": 115,
+  "subtype": "noteOn"
+}
+</pre>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--  SLIDE -->
+
+        <section>
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3>Note OFF</h3>
+              </div>
+
+              <div class="column">
+<pre>
+{
+  "deltaTime": 13,
+  "channel": 0,
+  "type": "channel",
+  "noteNumber": 35,
+  "velocity": 0,
+  "subtype": "noteOff"
+}
+</pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SLIDE -->
+
+        <section>
+          <div class="wrap">
+            <h2>Cálculo Delta Time ⏰</h2>
+
+            <ul>
+              <li>TicksPerBeat = 52 (Cabecera)</li>
+              <li>Microseconds Per Beat = 689655 (Set Tempo)</li>
+              <li>Microseconds Per Minute = 60000000 (Constante)</li>
+            </ul>
+
+            <ul class="flexblock border blink">
+              <li><a href=""><strong>Tempo</strong></a></li>
+              <li><a href=""><strong>Binario</strong></a></li>
+              <li><a href=""><strong>Pulsos</strong></a></li>
+              <li><a href=""><strong>Micro Segundos</strong></a></li>
+
+              <li><a href="">60000000 / 689655 = 87 BMP</a></li>
+              <li><a href="">11111111 01111111</a></li>
+              <li><a href="">16.383</a></li>
+              <li><a href="">16.383 * (60 / (87 * 52)) * 1000 = 217281</a></li>
+            </ul>
+          </div>
+        </section>
+
+        <!--  SLIDE  -->
+
+        <section class="bg-black">
+          <span class="background" style="background-image:url('./images/count.gif');"></span>
+          <div class="wrap aligncenter">
+          </div>
+        </section>
+
+        <!--  REDUX -->
+
+        <!-- SLIDE  -->
+
+        <section>
+          <div class="wrap aligncenter fadeIn">
+            <h1 class="text-data">¿Redux? ✋</h1>
+          </div>
+        </section>
+
+        <section>
+          <div class="wrap">
+            <div class="content-center">
+              <blockquote>
+                <p>Redux library itself is only a set of helpers to “mount” reducers to a single global store object. You can use as little, or as much of Redux, as you like.</p>
+                <p><cite><a href="http://twitter.com/danabramov/">@danabramov</a></cite></p>
+              </blockquote>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="wrap size-50 aligncenter">
+            <div class="bg-white shadow">
+              <h1>Redux</h1>
+              <ul class="flexblock aligncenter">
+                <li>
+                  <h2>2kb (incluyendo dependencias)</h2>
+                </li>
+                <li>
+                  <h2>Flux + Elm</h2>
+                </li>
+                <li>
+                  <h2>Puede utilizarse para cualquier framework</h2>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!--  SLIDES -->
+
+        <section>
+          <div class="wrap size-50 aligncenter">
+            <div class="bg-white shadow">
+              <h1>Principios Básicos</h1>
+              <ul class="flexblock reasons">
+                <li>
+                  <h2>STORE: Única fuente de datos</h2>
+                  <p>En la STORE se almacena el estado de la aplicación.</p>
+                </li>
+                <li>
+                  <h2>ACTIONS: para cambiar el estado</h2>
+                  <p>La vista no cambia el estado.</p>
+                </li>
+                <li>
+                  <h2>REDUCERS: Funciones puras</h2>
+                  <p>Actualizar el estado</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- SLIDE -->
+
+        <section>
+          <div class="wrap size-70 aligncenter">
+            <figure>
+              <img class="aligncenter" src=".../images/midi-redux.png" alt="midi-redux schema">
+            </figure>
+          </div>
+        </section>
+
+        <!-- SLIDE -->
+
+        <section>
+          <div class="wrap size-50 aligncenter">
+            <div class="bg-white shadow">
+              <h1>API</h1>
+              <ul class="flexblock">
+                <li>
+                  <h2>createStore</h2>
+                </li>
+                <li>
+                  <h2>combineReducers</h2>
+                </li>
+                <li>
+                  <h2>applyMiddleware</h2>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- SLIDE -->
+
+        <section>
+          <div class="wrap aligncenter fadeIn">
+            <h1 class="text-data"><code>👩‍💻CODE👀</code></h1>
+          </div>
+        </section>
+
+        <!-- SLIDE -->
+
+        <section>
+          <div class="wrap">
+            <div class="content-center">
+              <ul class="flexblock specs">
+                <li>
+                  <a href="https://github.com/mudcube/MIDI.js/">
+                    MIDI.js
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/gleitz/midi-js-soundfonts">
+                    MIDI.js Soundfonts
+                  </a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/rumyra/status/663811049502543876">
+                    Ruth John
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/watch?v=xsSnOQynTHs">
+                    Redux Video - Dan Abramov
+                  </a>
+                </li>
+                <li>
+                  <a href="https://medium.com/@pedroparra/redux-tutorial-bb8e87eebb09">
+                    Redux Tutorial - Pedro Parra
+                  </a>
+                </li>
+                <li>
+                  <a href="https://medium.com/react-redux/introducci%C3%B3n-a-redux-js-8bdf4fe0751e">
+                    Introducción a Redux.js - Sergio Xalambrí
+                  </a>
+                </li>
+                <li>
+                  <a href="https://carlosazaustre.es/blog/tag/redux/">
+                    Carlos Azaustre - Conceptos Básicos Redux
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/gaearon/redux-thunk">
+                    Redux Thunk - Dan Abramov
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-black">
+          <span class="background" style="background-image:url('./images/midi.jpeg'); opacity:0.3;"></span>
+          <div class="wrap aligncenter">
+            <h1 class="text-data"><strong>💜 Gracias 💜</strong></h1>
+          </div>
+        </section>
+
+      </article>
+    </main>
+
+    <script src="static/js/webslides.js"></script>
+    <script>
+      window.ws = new WebSlides();
+    </script>
+    <script defer src="static/js/svg-icons.js"></script>
+
+  </body>
+</html>
